@@ -17,16 +17,18 @@ library(tidyverse)
 accuracies <- read_csv("../data/accuracies.csv")
 data <- read_csv("../data/paper_data_streamlined.csv")
 
-sum(data$replication_score == "yes", na.rm = T) 
+dummy <- runif(length(accuracies$accuracy), min = min(accuracies$accuracy, max = max(accuracies$accuracy)))
 
+accuracies <- cbind(accuracies, dummy)
 ```
 # Draw density plot
 ```{r}
 accuracies %>% 
-  ggplot(aes(accuracy)) +
-  geom_density(color="orange") +
-  geom_vline(xintercept = mean(accuracies$accuracy), linetype = "dotted")+
-   
+  ggplot() +
+  geom_density(aes(x = accuracy), fill ="cornflowerblue", color = "white", alpha = 0.9) +
+  geom_density(aes(x = dummy), fill ="cornsilk", color = "white", alpha = 0.9) +
+  #geom_vline(xintercept = mean(accuracies$accuracy), linetype = "dotted")+
+
   theme_classic() 
 
 #mean(accuracies$accuracy)
