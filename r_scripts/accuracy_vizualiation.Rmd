@@ -21,16 +21,19 @@ accuracies <- read_csv("../data/accuracies.csv")
 ggplot() +
   
   #model performance density curve 
-  geom_density(aes(x = accuracies$accuracy, fill = "Accuracy of Model"), color = "white", alpha = 0.95) +
+  geom_density(aes(x = accuracies$accuracy, y=..scaled..,  fill = "Accuracy of Model"), color = "white", alpha = 0.95) +
   
   #dummy performance density curve
-  geom_density(aes(x = accuracies$`dummy accuracy`, fill ="Accuracy of Always Predicting\nSuccesfull Replication"), color = "white", alpha = 0.65) + 
+  geom_density(aes(x = accuracies$`dummy accuracy`, y=..scaled.., fill ="Accuracy of Always Predicting\nSuccesfull Replication"), color = "white", alpha = 0.65) + 
   
   #manually set color scale
   scale_colour_manual(values = c("coral", "cornflowerblue"), aesthetics = c("colour", "fill")) +
   
   #change label on x-axis
   xlab("Accuracy Scores") +
+  
+  #Change label on y-axis
+  ylab("Scaled density") +
   
   #use classic theme for axis and background
   theme_classic()  +
