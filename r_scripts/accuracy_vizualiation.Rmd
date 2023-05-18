@@ -15,21 +15,33 @@ library(tidyverse)
 # Load in data
 ```{r}
 accuracies <- read_csv("../data/accuracies.csv")
-data <- read_csv("../data/paper_data_streamlined.csv")
-
-sum(data$replication_score == "yes", na.rm = T) 
-
 ```
 # Draw density plot
 ```{r}
-accuracies %>% 
-  ggplot(aes(accuracy)) +
-  geom_density(color="orange") +
-  geom_vline(xintercept = mean(accuracies$accuracy), linetype = "dotted")+
-   
-  theme_classic() 
+ggplot() +
+  
+  #model performance density curve 
+  geom_density(aes(x = accuracies$accuracy, fill = "Accuracy of Model"), color = "white", alpha = 0.95) +
+  
+  #dummy performance density curve
+  geom_density(aes(x = accuracies$`dummy accuracy`, fill ="Accuracy of Always Predicting\nSuccesfull Replication"), color = "white", alpha = 0.65) + 
+  
+  #manually set color scale
+  scale_colour_manual(values = c("coral", "cornflowerblue"), aesthetics = c("colour", "fill")) +
+  
+  #change label on x-axis
+  xlab("Accuracy Scores") +
+  
+  #use classic theme for axis and background
+  theme_classic()  +
 
-#mean(accuracies$accuracy)
+  #move legend to inside top left of plot
+  theme(legend.position = c(.03, .999), legend.justification = c("left", "top")) +
+  
+  #remove title from legend
+  guides(fill=guide_legend(title=NULL)) 
+
+
 
 ```
 
