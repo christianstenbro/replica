@@ -2,31 +2,41 @@
 ```mermaid
 
 sequenceDiagram
-    Note over Original Data: n = 294
+    Note over Abstracts and replication outcomes: Shape of data: 95 x 2
     
-    Original Data ->> Processed Data: Filtered out non-replication studies <br> + within-paper replications
+    Abstracts and replication outcomes ->> TF-IDF weights for each paper: TF-IDF vectorizer from Scikit-Learn
     
-    Note over Processed Data: n = 91
+    Note over TF-IDF weights for each paper: Shape of data: 95 x 2586
+
+    TF-IDF weights for each paper ->> Sorted TF-IDF weights for each paper: Removed all coloumns that contained a <br> term not found in the word2vec model
+
+    Note over Sorted TF-IDF weights for each paper: Shape of data: 95 x 2501
     
-    Processed Data ->> Cloud Data 1: Uploaded the processed data <br> base to Google Drive to append original papers <br> to the replication study papers
+    Note over 200-dimensional word vectors: shape: 275561 x 201
 
-    Note over Cloud Data 1: n = 91
+    200-dimensional word vectors ->> Sorted 200-dimensional word vectors: Removed all rows which contained words <br> not present in the corpus of abstracts
 
-    Cloud Data 1 ->> Cloud Data 2: Appended abstracts from original <br> papers. Some replication studies replicated <br> multiple studies, hence the sample size is <br> increased
+    200-dimensional word vectors ->> Sorted 200-dimensional word vectors: Rows were reordered <br> according to the order of columns in the TF-IDF-matrix
+  
+    Note over Sorted 200-dimensional word vectors: shape: 2501 x 201
 
-    Note over Cloud Data 2: n = 97
+    Sorted 200-dimensional word vectors ->> Sorted and comensurable 200-dimensional word vectors: An index row was removed
 
-    Cloud Data 2 ->> Local Data 1: Downloaded the data frame and <br> removed the unneeded columns.
+    Note over Sorted and comensurable 200-dimensional word vectors: shape: 2501 x 200
 
-    Note over Local Data 1: n = 97
+    Sorted TF-IDF weights for each paper ->> Weighted word vectors:  Matrix multiplying TF-IDF x Word2vector matricies
 
-    Local Data 1 ->> Local Data 2: Ground truth encodings are simplified <br> reducing the values to 'yes', 'no', and 'partial'
+    Sorted and comensurable 200-dimensional word vectors ->> Weighted word vectors: Matrix multiplying TF-IDF x Word2vector matricies
 
-    Note over Local Data 2: n = 97
+    Note over Weighted word vectors: Shape: 95 x 200
 
-    Local Data 2 ->> Python Processing: The data is inputted into a Python script <br> where further processing is carried out
 
-    Note over Python Processing: n = 97
+
+
+
+
+
+
 
 ```
 
