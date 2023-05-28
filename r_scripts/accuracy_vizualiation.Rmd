@@ -18,7 +18,7 @@ accuracies <- read_csv("../data/accuracies.csv")
 ```
 # Draw density plot
 ```{r}
-ggplot() +
+densities_plot <- ggplot() +
   
   #model performance density curve 
   geom_density(aes(x = accuracies$accuracy, fill = "Accuracy of Model"), color = "white", alpha = 0.95) +
@@ -32,16 +32,27 @@ ggplot() +
   #change label on x-axis
   xlab("Accuracy Scores") +
   
+<<<<<<< Updated upstream
+=======
+  #Change label on y-axis
+  ylab("Scaled density") +
+  
+
+  xlim(0.3, 0.9) +
+  
+>>>>>>> Stashed changes
   #use classic theme for axis and background
   theme_classic()  +
 
   #move legend to inside top left of plot
-  theme(legend.position = c(.03, .999), legend.justification = c("left", "top")) +
+  theme(legend.position = c(.01, .999), legend.justification = c("left", "top")) +
   
   #remove title from legend
   guides(fill=guide_legend(title=NULL)) 
 
+densities_plot
 
+ggsave("Accuracy_dists.png")
 
 ```
 
