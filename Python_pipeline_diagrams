@@ -1,9 +1,0 @@
-```mermaid
-
-flowchart TD
-	A[Classifier 1: TF-IDF * Word2Vec] -.-> C[Final classifier = average]
-    B[Classifier 2: TF * Word2Vec] -.-> C
-    C --> D{Model evaluation for-loop}
-	
-
-```

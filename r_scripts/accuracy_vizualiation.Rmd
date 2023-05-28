@@ -45,6 +45,6 @@ ggplot() +
   guides(fill=guide_legend(title=NULL)) 
 
 
-
+ggsave("../visualizations/Accuracy_dists.png")
 ```
 
