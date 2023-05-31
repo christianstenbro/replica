@@ -1,4 +1,4 @@
-# WHAT HAPPENED TO AUTOMATING REPLICATION? 
+# WHAT HAPPENED TO AUTOMATED REPLICATION? 
 This repository was used for a replication attempt of the paper [Estimating the deep replicability of scientific findings using human and artificial intelligence](https://www.pnas.org/doi/10.1073/pnas.1909046117) by Yang et al.. This was done as part of the course Applied Cognitive Science at the Bachelor program in Cognitive Science at Aarhus University. The repository contains:
 
 - A database of abstracts of linguistics papers that we subjectively hand coded with replication outcomes
@@ -9,3 +9,7 @@ This repository was used for a replication attempt of the paper [Estimating the 
 
 ## How to use this repo
 To retrain the models, you will need to download the [word2vec model](https://osf.io/w5h8j) made by the same authors for a different paper [A discipline-wide investigation of the replicability of Psychology papers over the past two decades](https://www.pnas.org/doi/10.1073/pnas.2208863120). and store it in the data folder. We hope that this work can be of use to anyone. 
+
+*** 
+
+Emil Frej and Christian Stenbro
