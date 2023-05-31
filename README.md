@@ -9,3 +9,7 @@ This repository was used for a replication attempt of the paper [Estimating the 
 
 ## How to use this repo
 To retrain the models, you will need to download the [word2vec model](https://osf.io/w5h8j) made by the same authors for a different paper [A discipline-wide investigation of the replicability of Psychology papers over the past two decades](https://www.pnas.org/doi/10.1073/pnas.2208863120). and store it in the data folder. We hope that this work can be of use to anyone. 
+
+*** 
+
+Emil Frej and Christian Stenbro
