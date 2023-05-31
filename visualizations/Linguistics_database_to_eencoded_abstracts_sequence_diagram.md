@@ -26,7 +26,7 @@ sequenceDiagram
 
     Local Data 2 ->> Python Processing: The data is inputted into a Python script <br> where further processing is carried out
 
-    Note over Python Processing: n = 97
+    Note over Python Processing: n = 95
 
 ```
 
