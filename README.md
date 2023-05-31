@@ -1,4 +1,4 @@
-# WHAT HAPPENED TO AUTOMATING REPLICATION? 
+# WHAT HAPPENED TO AUTOMATED REPLICATION? 
 This repository was used for a replication attempt of the paper [Estimating the deep replicability of scientific findings using human and artificial intelligence](https://www.pnas.org/doi/10.1073/pnas.1909046117) by Yang et al.. This was done as part of the course Applied Cognitive Science at the Bachelor program in Cognitive Science at Aarhus University. The repository contains:
 
 - A database of abstracts of linguistics papers that we subjectively hand coded with replication outcomes
