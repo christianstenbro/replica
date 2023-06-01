@@ -2,7 +2,7 @@
 This repository was used for a conceptual replication attempt of the paper [Estimating the deep replicability of scientific findings using human and artificial intelligence](https://www.pnas.org/doi/10.1073/pnas.1909046117) by Yang et al. 2020. This was done as part of the course Applied Cognitive Science at the Bachelor program in Cognitive Science at Aarhus University. The repository contains:
 
 - A database of abstracts of linguistics papers that we subjectively hand coded with replication outcomes (see the *Data* headline for details)
-- A python script for converting the abstracts into TF-IDF weights, then using these to reweight a word2vec model trained by Yang et al, and use this reweighted model to train a classifier.
+- A python script for converting the abstracts into TF-IDF weights, then using these to reweight a word2vec model trained by Yang et al., and using this reweighted model to train a classifier.
 - An R-script for visuazaling model performance based on simulating 1000 random model fits
 - Various visuazilations of model outcomes and the diagrams of how the data was processed
 - The resulting report
